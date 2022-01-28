@@ -12,6 +12,17 @@ y = data['rating']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 
 GCP hypertuning
+from sklearn import gaussian_process
+from sklearn.gaussian_process import GaussianProcessClassifier
+from sklearn.gaussian_process.kernels import RBF
+from sklearn.datasets import make_classification
+from sklearn.model_selection import GridSearchCV
+from sklearn.gaussian_process.kernels import Matern, WhiteKernel, ConstantKernel
+from sklearn.model_selection import RepeatedStratifiedKFold
+from sklearn.gaussian_process.kernels import DotProduct
+from sklearn.gaussian_process.kernels import RationalQuadratic
+
+
 
 # define model
 GPC = GaussianProcessClassifier()
