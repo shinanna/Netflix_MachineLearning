@@ -46,5 +46,5 @@
 
 ## Links
 
-https://github.com/shinanna/Project7_Netflix
-https://trello.com/b/pUyc1vyx/group-4-project-7
+https://github.com/shinanna/Project7_Netflix 
+https://trello.com/b/pUyc1vyx/group-4-project-7 
