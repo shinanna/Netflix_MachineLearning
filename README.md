@@ -3,6 +3,8 @@
 ===
 
 ## Project planning in Trello 
+- Task split in Trello
+- Task duration in Toggle
 
 ## Data Cleaning
 
