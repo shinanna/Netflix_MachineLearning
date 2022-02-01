@@ -1,51 +1,44 @@
-# Project7_Netflix
+# Project7_Group4_Netflix
 
-Code for data split:
+===
 
-data.drop('Unnamed: 0', axis=1, inplace=True)
+## Project planning in Trello 
+- Task split in Trello
+- Task duration in Toggle
 
-# split dataset into independent and dependent variables
-X = data.drop('rating', axis=1)
-y = data['rating']
+## Data Cleaning
 
-# train-test split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+- data_clean.csv: cleaned dataset before encoding
+- data_clean_encoded.csv: cleaned and encoded dataset
 
-GCP hypertuning
-from sklearn import gaussian_process
-from sklearn.gaussian_process import GaussianProcessClassifier
-from sklearn.gaussian_process.kernels import RBF
-from sklearn.datasets import make_classification
-from sklearn.model_selection import GridSearchCV
-from sklearn.gaussian_process.kernels import Matern, WhiteKernel, ConstantKernel
-from sklearn.model_selection import RepeatedStratifiedKFold
-from sklearn.gaussian_process.kernels import DotProduct
-from sklearn.gaussian_process.kernels import RationalQuadratic
+## EDA
 
+- Number of movies per year
+- Movies per country
+- The most popular genre per year
+- The most popular genre per country
 
+## Models
 
-# define model
-GPC = GaussianProcessClassifier()
+- Linear Discriminant Analysis
+- GaussianProcessClassifier
+- BaggingClassifier
+- Gradient Tree Boosting
 
-# define model evaluation method
-cv = RepeatedStratifiedKFold(n_splits=10, n_repeats=3, random_state=1)
+**Each with:**
 
-# define grid
-grid = dict()
-grid['kernel'] = [1*RBF(), 1*DotProduct(), 1*Matern(), 1*RationalQuadratic(), 1*WhiteKernel()]
+- feature selection
+- Hyperparameters tuning
+- comparison metrics
 
-# define search
-search = GridSearchCV(GPC, grid, scoring='accuracy', cv=cv, n_jobs=-1)
+## Finalization
 
-# perform the search
-results = search.fit(x_train, y_train)
+- Compilation of code files into one
+- Github upload
 
-# summarize best
-print('Best Mean Accuracy: %.3f' % results.best_score_)
-print('Best Config: %s' % results.best_params_)
+=== 
 
-# summarize all
-means = results.cv_results_['mean_test_score']
-params = results.cv_results_['params']
-for mean, param in zip(means, params):
-    print(">%.3f with: %r" % (mean, param))
+## Links
+
+https://github.com/shinanna/Project7_Netflix  
+https://trello.com/b/pUyc1vyx/group-4-project-7
